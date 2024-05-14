@@ -57,12 +57,13 @@ class Polynomial:
 
     def display(self):
         current = self.head
+        if current is None:
+            print("Empty polynomial")
+            return
         while current is not None:
-            print(f"{current.coefficient}x^{current.power}", end=" ")
-            if current.next is not None:
-                print("+", end=" ")
+            print(f"| {current.coefficient}x^{current.power} ", end="")
             current = current.next
-        print()
+        print("|")
 
 
 # Example usage
@@ -88,6 +89,7 @@ result_addition.display()
 print("Multiplication result:")
 result_multiplication = Polynomial().multiply(poly1, poly2)
 result_multiplication.display()
+
 
         
         
